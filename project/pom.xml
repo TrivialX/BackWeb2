@@ -46,8 +46,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>annotationProcessor</scope>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -56,5 +60,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
