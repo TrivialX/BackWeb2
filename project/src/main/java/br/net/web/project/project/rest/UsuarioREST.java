@@ -41,7 +41,7 @@ public class UsuarioREST {
 
     @PostMapping("/usuarios")
     public ResponseEntity<Usuario> inserir(@RequestBody Usuario usuario) {
-        Usuario u = lista.stream().filter(usu -> usu.getLogin().equals(usuario.getLogin())).findAny().orElse(null);
+        Usuario u = lista.stream().filter(usu -> usu.getEmail().equals(usuario.getEmail())).findAny().orElse(null);
         if (u != null) {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
@@ -59,7 +59,7 @@ public class UsuarioREST {
         Usuario u = lista.stream().filter(usu -> usu.getId() == id).findAny().orElse(null);
         if (u != null) {
             u.setNome(usuario.getNome());
-            u.setLogin(usuario.getLogin());
+            u.setEmail(usuario.getEmail());
             u.setSenha(usuario.getSenha());
             u.setPerfil(usuario.getPerfil());
             return ResponseEntity.ok(u);
@@ -82,7 +82,7 @@ public class UsuarioREST {
     @PostMapping("/login")
     public ResponseEntity<Usuario> login(@RequestBody Login login) {
         Usuario usuario = lista.stream().
-            filter(usu -> usu.getLogin().equals(login.getLogin()) && 
+            filter(usu -> usu.getEmail().equals(login.getEmail()) && 
                           usu.getSenha().equals(login.getSenha())).
             findAny().orElse(null);
         if (usuario==null)
@@ -125,9 +125,7 @@ public class UsuarioREST {
         Funcionario p = funcionarios.stream().filter(func -> func.getId() == id).findAny().orElse(null);
         if (p != null) {
             p.setNome(funcionario.getNome());
-            p.setIdade(funcionario.getIdade());
             p.setDataNascimento(funcionario.getDataNascimento());
-            p.setMotorista(funcionario.getMotorista());
             return ResponseEntity.ok(p);
         }
         else

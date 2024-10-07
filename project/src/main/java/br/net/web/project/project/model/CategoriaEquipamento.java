@@ -7,10 +7,10 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Login {
+public class CategoriaEquipamento {
     @Setter @Getter
-    private String email;
+    private int idCategoria;
     
     @Setter @Getter
-    private String senha;
+    private String nomeCategoria;
 }

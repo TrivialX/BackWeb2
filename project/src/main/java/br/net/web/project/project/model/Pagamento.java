@@ -5,21 +5,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @AllArgsConstructor
-public class Usuario {
+public class Pagamento {
     @Setter @Getter
-    private int id;
+    private int idPagamento;
     
     @Setter @Getter
-    private String nome;
+    private Solicitacao solicitacao;
     
     @Setter @Getter
-    private String email;
+    private BigDecimal valor;
     
     @Setter @Getter
-    private String senha;
-
-    @Setter @Getter
-    private String perfil;
+    private LocalDateTime dataPagamento;
 }

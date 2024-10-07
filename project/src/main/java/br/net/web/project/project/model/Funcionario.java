@@ -7,15 +7,7 @@ import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class Funcionario {
-@Setter @Getter
-private int id;
-@Setter @Getter
-private String nome;
-@Setter @Getter
-private int idade;
-@Setter @Getter
-private String dataNascimento;
-@Setter @Getter
-private String motorista;
+public class Funcionario extends Usuario {
+    @Setter @Getter
+    private String dataNascimento;
 }
