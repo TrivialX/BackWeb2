@@ -1,5 +1,4 @@
 package br.net.web.project.project.model;
-import br.net.web.project.project.model.CategoriaEquipamento;
 
 
 import lombok.AllArgsConstructor;
